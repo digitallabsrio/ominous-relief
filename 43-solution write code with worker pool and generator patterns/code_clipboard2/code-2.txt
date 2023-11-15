@@ -1,0 +1,73 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
+
+type Job struct {
+	id       int
+	randomno int
+}
+
+type Result struct {
+	job              Job
+	sumofdigits, wId int
+}
+
+func digits(number int) int {
+	sum := 0
+	for number != 0 {
+		digit := number % 10
+		sum += digit
+		number /= 10
+	}
+	time.Sleep(2 * time.Second)
+	return sum
+}
+
+func createWorkerPool(noOfWorkers int, jobs chan Job) chan Result {
+	var wg sync.WaitGroup
+	results := make(chan Result, 10)
+	go func() {
+		defer close(results)
+		defer wg.Wait()
+		for i := 0; i < noOfWorkers; i++ {
+			wg.Add(1)
+			go func(i int) {
+				defer wg.Done()
+				for job := range jobs {
+					output := Result{job, digits(job.randomno), i}
+					results <- output
+				}
+			}(i)
+		}
+	}()
+	return results
+}
+
+func allocate(noOfJobs int) chan Job {
+	jobs := make(chan Job, 10)
+	go func() {
+		defer close(jobs)
+		for i := 0; i < noOfJobs; i++ {
+			randomno := rand.Intn(999) + 1
+			job := Job{i, randomno}
+			jobs <- job
+		}
+	}()
+	return jobs
+}
+
+func main() {
+
+	noOfJobs := 100
+	jobGenerator := allocate(noOfJobs)
+	noOfWorkers := 10
+
+	for result := range createWorkerPool(noOfWorkers, jobGenerator) {
+		fmt.Printf("Job id %d, input random no %d, sum of digits %d, worker id %d\n", result.job.id, result.job.randomno, result.sumofdigits, result.wId)
+	}
+}

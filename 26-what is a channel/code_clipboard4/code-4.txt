@@ -1,0 +1,6 @@
+func channel(goChan chan int) {
+    for v := 0; v < 2; v++ {
+        goChan  <- v
+    }
+    close(goChan)
+}

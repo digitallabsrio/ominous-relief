@@ -1,0 +1,8 @@
+func func_name(in <-chan []string) chan []string {
+	out := make(chan []string)
+	go func(in <-chan []string) {
+		defer close(out)
+		// some coding stuff
+	}(in)
+	return out
+}

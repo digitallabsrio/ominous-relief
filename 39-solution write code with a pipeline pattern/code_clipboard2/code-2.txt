@@ -1,0 +1,4 @@
+for c := range in {
+  c[0], c[1], c[2] = c[1], c[2], c[0]
+  out <- c
+}

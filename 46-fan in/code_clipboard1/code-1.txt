@@ -1,0 +1,9 @@
+send := func(c <-chan int) {
+	for n := range c {
+		out <- Number {
+			n,
+			reverseNumber(n),
+		}
+	}
+	wg.Done()
+}

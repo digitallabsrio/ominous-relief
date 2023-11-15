@@ -1,0 +1,16 @@
+quit := make(chan bool)
+go func() {
+    for {
+        select {
+        case <- quit:
+            return
+        someCase statement:
+            // some other stuff
+        }
+    }
+}()
+
+// some stuff
+
+// Quit goroutine
+quit <- true

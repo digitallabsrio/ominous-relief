@@ -1,0 +1,9 @@
+ano := func(v string, g func(v string) string) {
+	x := g(v)
+	fmt.Println(x)
+	wg.Done()
+}
+
+wg.Add(1)
+go ano("Hello!", g)
+wg.Wait()

@@ -1,0 +1,17 @@
+
+function{
+    seat = 1
+    thread_one{
+        if ( seat > 0 ){
+            book_ticket();
+            seat--;
+        }
+    }
+
+    thread_two{
+        if ( seat > 0 ){
+            book_ticket();
+            seat--;
+        }
+    }
+}

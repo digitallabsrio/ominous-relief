@@ -1,0 +1,16 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+)
+
+// define struct
+
+func main() {
+	// write consumer function
+	// you need to print the struct
+}
+
+// write a generator function which returns a channel 
+// call a goroutine to return random integer less than or equal to n

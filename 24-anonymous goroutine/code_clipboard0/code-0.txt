@@ -1,0 +1,6 @@
+anonymousFunc := func( input parameter ) output parameter {
+  // Do some stuff
+  return values
+}
+
+x := anonymousFunc(input parameters) 

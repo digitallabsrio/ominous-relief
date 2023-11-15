@@ -1,0 +1,5 @@
+func useUniDirChannel(channel chan<- int, n int) {
+	for val := range next(n) {
+		channel <- val
+	}
+}

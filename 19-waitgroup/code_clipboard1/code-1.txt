@@ -1,0 +1,6 @@
+func main(){
+  process1()
+  process2()
+  process3()
+  process4()
+}

@@ -1,0 +1,5 @@
+record, err := cr.Read()
+if err == io.EOF {
+  close(output)
+  return
+}

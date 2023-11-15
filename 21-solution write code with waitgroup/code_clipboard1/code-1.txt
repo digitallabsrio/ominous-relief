@@ -1,0 +1,4 @@
+wg.Add(len(urls))
+for _, url := range urls {
+	go fetchUrl(url, &wg)
+}

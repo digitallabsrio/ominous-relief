@@ -1,0 +1,2 @@
+http.HandleFunc("/", homeHandler)
+http.ListenAndServe(":7079", nil)

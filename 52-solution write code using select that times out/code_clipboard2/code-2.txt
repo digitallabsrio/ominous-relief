@@ -1,0 +1,15 @@
+timer := time.NewTimer(time.Duration(5) * time.Second)
+for i, p := range problems {
+  go func() {
+    var answer string
+    fmt.Scanf("%s\n", &answer)
+    answerCh <- answer
+  }()
+
+  select {
+    case <-timer.C:
+      ...
+    case answer := <-answerCh:
+      ...
+  }
+}

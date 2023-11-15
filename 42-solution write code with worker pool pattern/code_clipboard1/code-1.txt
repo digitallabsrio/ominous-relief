@@ -1,0 +1,6 @@
+for i := 0; i < noOfJobs; i++ {
+	randomNum := rand.Intn(999) + 1
+	job := Job{i, randomNum}
+	jobs <- job
+}
+close(jobs)

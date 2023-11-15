@@ -1,0 +1,4 @@
+type struct_name struct {
+    val int
+    message string
+}

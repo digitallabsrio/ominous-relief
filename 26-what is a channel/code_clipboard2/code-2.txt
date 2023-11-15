@@ -1,0 +1,9 @@
+package main
+
+import "fmt"
+
+func main() {
+	goChannel := make(chan int)
+	goChannel <- 1
+	fmt.Println("Value ", <-goChannel)
+}

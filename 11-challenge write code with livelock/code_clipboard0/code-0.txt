@@ -1,0 +1,32 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+  	"runtime"
+)
+
+func main() {
+  	runtime.GOMAXPROCS(4)
+	type value struct {
+		sync.Mutex
+		id     string
+		value1 string
+		value2 string
+		locked bool
+	}
+
+	lock := func(v *value) {
+		v.Lock()
+		v.locked = true
+	}
+	unlock := func(v *value) {
+		v.Unlock()
+		v.locked = false
+	}
+	var wg sync.WaitGroup
+	wg.Add(2)
+	// write your code here
+	wg.Wait()
+}

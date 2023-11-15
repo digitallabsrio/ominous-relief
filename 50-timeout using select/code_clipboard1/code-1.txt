@@ -1,0 +1,9 @@
+for {
+  select {
+    case res := <-goChannel:
+      fmt.Println(res)
+    case <-time.After(1 * time.Second):
+      fmt.Println("timeout")
+    }
+  }
+}

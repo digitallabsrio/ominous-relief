@@ -1,0 +1,28 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+var wg sync.WaitGroup
+
+func main() {
+	start := time.Now()
+	a, b := 4, 5
+	wg.Add(2)
+	go func() {
+		fmt.Printf("The multiplication of %d and %d is %d\n",a,b, (a * b))
+		time.Sleep(2*time.Second)
+		wg.Done()
+	}()
+	go func() {
+		fmt.Printf("The sum of %d and %d is %d\n",a,b,(a + b))
+		time.Sleep(2*time.Second)
+		wg.Done()
+	}()
+
+	wg.Wait()
+	fmt.Printf("%s", time.Since(start))
+}

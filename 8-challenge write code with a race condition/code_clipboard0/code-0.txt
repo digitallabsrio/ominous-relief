@@ -1,0 +1,13 @@
+package main
+
+import "time"
+
+// write function to read value
+
+// write function to update value
+
+// complete the main function as well.
+
+// func main() {
+//   time.Sleep(2 * time.Second)
+// }

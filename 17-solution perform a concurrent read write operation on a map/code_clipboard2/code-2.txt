@@ -1,0 +1,3 @@
+mu.Lock()
+sharedMap[0]++
+mu.Unlock()

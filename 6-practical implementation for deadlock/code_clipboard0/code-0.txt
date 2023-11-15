@@ -1,0 +1,18 @@
+package main
+
+import "fmt"
+
+func main() {
+	channel := make(chan int)
+
+	go func(channel chan int) {
+		for i := 0; i < 100; i++ {
+			channel <- i
+		}
+	}(channel)
+
+	for val := range channel {
+		fmt.Println(val)
+	}
+
+}

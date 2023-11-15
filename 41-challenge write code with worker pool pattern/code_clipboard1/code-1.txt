@@ -1,0 +1,45 @@
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
+
+type Job struct {
+	id       int
+	randomno int
+}
+
+type Result struct {
+	job         Job
+	sumofdigits, wId int
+}
+
+// calculate sum of digits and return int
+
+// create worker pool which passes result struct into the results channel
+// use wait group
+func createWorkerPool(noOfWorkers int, jobs chan Job, results chan Result) {
+}
+
+// allocate the jobs into the jobs channel
+func allocate(noOfJobs int, jobs chan Job) {
+}
+
+func main() {
+	// initialize the channels
+
+	// initialize number of jobs
+	
+	// call the allocate function
+	
+	// initialize number of worker
+	
+	// call the worker pool to operate on the jobs
+
+	// print out the results
+	// fmt.Printf("Job id %d, input random no %d , sum of digits %d, worker id %d\n", result.job.id, result.job.randomno, result.sumofdigits, result.wId)
+	
+}

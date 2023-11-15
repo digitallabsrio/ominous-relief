@@ -1,0 +1,20 @@
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+// function to read map value with the two parameters
+
+// function to write map value with the two parameters
+
+// complete main function as well.
+// initialize map
+// inititalize the two go routines.
+
+
+// func main() {
+// 	time.Sleep(1 * time.Second)
+// }

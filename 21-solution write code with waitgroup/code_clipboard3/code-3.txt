@@ -1,0 +1,8 @@
+func homeHandler(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("Home endpoint")
+	wg.Add(len(urls))
+	for _, url := range urls {
+		go fetchUrl(url)
+	}
+	fmt.Fprintf(w, "All Response received successfully")
+}

@@ -1,0 +1,3 @@
+for chr := 'A'; chr <= 'Z'; chr++ {
+	goChannel <- fmt.Sprintf("%c", chr)
+}

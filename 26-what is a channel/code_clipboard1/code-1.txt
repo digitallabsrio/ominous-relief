@@ -1,0 +1,5 @@
+func main() {
+    var goChannel chan int
+    goChannel = make(chan int)
+    fmt.Printf("Type of channel is %T", goChannel)
+}

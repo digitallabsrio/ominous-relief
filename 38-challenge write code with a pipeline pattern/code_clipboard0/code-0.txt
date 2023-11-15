@@ -1,0 +1,24 @@
+package main
+
+import (
+	"encoding/csv"
+	"errors"
+	"fmt"
+	"io"
+	"log"
+	"os"
+)
+
+// Add functions convertOne, convertTwo and displayData
+
+func main() {
+	records, err := readCSV("file.csv")
+	if err != nil {
+		log.Fatalf("Could not read csv %v", err)
+	}
+
+	for c := range displayData(convertTwo(convertOne(records))) {
+		fmt.Println(c)
+	}
+
+}

@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	g := func(v string) string {
+		fmt.Println(v + " Dear!!")
+		return v
+	}
+
+	ano := func(v string, g func(v string) string) {
+		x := g(v)
+		fmt.Println(x)
+	}
+
+	ano("Hello!", g)
+
+}

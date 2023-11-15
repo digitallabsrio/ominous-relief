@@ -1,0 +1,14 @@
+for i, p := range problems {
+	// waits for input from user on another goroutine
+	go func() {
+		fmt.Scanf("%s\n", &answer)
+	}()
+
+	select {
+	case <-timer.C:
+		// it the timer is up the case statement will execute and return from the loop
+		return
+	case answer := <-answerCh:
+		// math logic
+	}
+}

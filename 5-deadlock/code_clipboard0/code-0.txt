@@ -1,0 +1,6 @@
+package main
+
+func main() {
+	goChannel := make(chan int)
+	goChannel <- 1
+}

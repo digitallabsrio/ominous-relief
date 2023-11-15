@@ -1,0 +1,9 @@
+type Job struct {
+	id       int
+	randomno int
+}
+
+type Result struct {
+	job         Job
+	sumofdigits, wId int
+}

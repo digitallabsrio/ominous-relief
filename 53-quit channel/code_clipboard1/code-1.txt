@@ -1,0 +1,9 @@
+start := make(chan bool)
+
+go func(){
+    <-start
+    // Proceed with some stuff
+}
+
+// Do some required stuff
+start <- true

@@ -1,0 +1,3 @@
+for c := range fibonacci(n){
+    fmt.Printf("Fibonacci number is %d \n",c)  	
+}

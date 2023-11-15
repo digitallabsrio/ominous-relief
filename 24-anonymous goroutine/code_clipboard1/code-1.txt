@@ -1,0 +1,7 @@
+g := func(v string){
+    fmt.Println(v)
+}
+     
+func(v string, g func(v string)){
+    g(v)
+}("Hello!", g)  

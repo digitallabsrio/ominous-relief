@@ -1,0 +1,13 @@
+func readCSVFile(filename string) [][]string {
+	data, err := os.Open(filename)
+	check(err)
+	defer data.Close()
+
+	csvReader := csv.NewReader(data)
+	records, err := csvReader.ReadAll()
+	if err != nil {
+		log.Fatal("Unable to parse file as CSV for "+filename, err)
+	}
+
+	return records
+}
